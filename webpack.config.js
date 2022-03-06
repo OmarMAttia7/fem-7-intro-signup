@@ -25,7 +25,7 @@ module.exports = {
 
     //Webpack plugins
     plugins:[
-        new HtmlWebpackPlugin({ //This plugin makes an html file that can be configured below
+        new HtmlWebpackPlugin({ //This plugin makes a html file that can be configured below
             template: "./src/index.html",
             favicon: "./src/images/favicon-32x32.png"
         }),
@@ -38,12 +38,32 @@ module.exports = {
             new CssMinimizerPlugin(), //This plugin minimizes CSS in production
         ],
         minimize: true, //set to true to minimize even in development
+
+        runtimeChunk: 'single',
+
+        splitChunks: {
+            //This is used to cache production node modules
+            cacheGroups: {
+
+                vendor: {
+
+                    test: /[\\/]node_modules[\\/]/,
+
+                    name: 'vendors',
+
+                    chunks: 'all',
+
+                },
+
+            },
+
+        },
     },
 
     module: {
         //This section determines how various file types are processed with webpack
         rules: [
-            {   
+            {
                 //CSS files
                 test: /\.css$/i,
                 use: [
@@ -64,18 +84,18 @@ module.exports = {
                     { loader: 'postcss-loader', options: {
                         postcssOptions: {
 
-                            //PostCSS plugins are imported and configured here
+                            //PostCSS' plugins are imported and configured here
                             plugins: [
 
                                 //1. postcss-custom-properties to process CSS custom properties for older browsers
-                                //   preserve is set to false to disallow preserving custom properties after processing them
+                                //   preserve is set to false; to disallow preserving custom properties after processing them
                                 postcssCustomProperties( {preserve: false} ),
 
                                 //2. autoprefixer
                                 autoprefixer(),
-                                
+
                                 //3. tailwind-css
-                                //   configured in it's own file to avoid extending this one
+                                //   configured in its own file to avoid extending this one
                                 tailwindCssNesting(),
                                 tailwindCss(),
                             ],
@@ -90,7 +110,7 @@ module.exports = {
                 //Image files
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
-        
+
             },
             {
 
