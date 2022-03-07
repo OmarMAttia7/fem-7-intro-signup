@@ -10,7 +10,6 @@ const tailwindCssNesting = require('tailwindcss/nesting')
 module.exports = {
     //mode
     mode: 'development',
-
     //entries
     entry: {
         index: './src/index.js'

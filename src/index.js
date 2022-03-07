@@ -6,13 +6,15 @@ import "./index.css";
 function App() {
     return <>
 
-        <main className="font-main">
+        <main className="font-main text-white px-[8vw]">
             <IntroSection />
             <FormSection />
         </main>
 
         </>
 }
+
+document.body.classList.add('bg-mobile')
 /*
 <footer>
 <p class="attribution">
