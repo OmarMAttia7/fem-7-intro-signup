@@ -6,7 +6,8 @@ import "./index.css";
 function App() {
     return <>
 
-        <main className="font-main text-white px-[8vw]">
+        <main className="font-main text-white py-10 px-[8vw] lg:px-[10vw]
+        md:grid md:grid-cols-2 md:min-h-screen md:gap-5">
             <IntroSection />
             <FormSection />
         </main>
@@ -14,7 +15,7 @@ function App() {
         </>
 }
 
-document.body.classList.add('bg-mobile')
+document.body.classList.add('bg-mobile', 'md:bg-desktop')
 /*
 <footer>
 <p class="attribution">

@@ -14,7 +14,7 @@ class Form extends React.Component {
 
           validation: {
             type: 'string',
-            length: {greaterThan: 4}
+            length: {greaterThan: 0}
           }
 
         },
@@ -79,7 +79,7 @@ class Form extends React.Component {
 
                   <button type="submit"
                   className="bg-green w-full p-4 text-white font-[600] rounded-[5px] uppercase
-                  shadow-[0_3px_0_hsl(154,59%,40%)] mb-4">
+                  shadow-[0_3px_0_hsl(154,59%,40%)] mb-4 hover:bg-[hsl(154,59%,70%)] hover:text-[hsl(154,59%,20%)]">
                     Claim your free trial
                   </button>
 

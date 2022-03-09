@@ -17,11 +17,13 @@ module.exports = {
             },
 
             backgroundImage: {
-                'mobile': 'url(./images/bg-intro-mobile.png)'
+                'mobile': 'url(./images/bg-intro-mobile.png)',
+                'desktop': 'url(./images/bg-intro-desktop.png)',
+                'error': 'url(./images/icon-error.svg)'
             },
 
             backgroundColor: {
-                'mobile': 'hsla(0, 100%, 74%, 95%)'
+                'mobile': 'hsla(0, 100%, 66%, 80%)'
             }
 
         },

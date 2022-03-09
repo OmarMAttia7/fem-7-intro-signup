@@ -11,7 +11,7 @@ class FormSection extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="md:flex md:justify-center md:flex-col">
 
                 <div
                     className={`bg-blue ${this.styling.box} px-16 text-center mb-5`}>
