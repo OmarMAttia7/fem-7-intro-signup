@@ -407,19 +407,19 @@ var FormSection = /*#__PURE__*/function (_React$Component) {
 function App() {
   return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("main", {
     className: "font-main text-white py-10 px-[8vw] lg:px-[10vw] md:grid md:grid-cols-2 md:min-h-screen md:gap-5"
-  }, /*#__PURE__*/react.createElement(intro_section, null), /*#__PURE__*/react.createElement(form_section, null)));
+  }, /*#__PURE__*/react.createElement(intro_section, null), /*#__PURE__*/react.createElement(form_section, null)), /*#__PURE__*/react.createElement("footer", null, /*#__PURE__*/react.createElement("p", {
+    "class": "text-darkblue"
+  }, "Challenge by ", /*#__PURE__*/react.createElement("a", {
+    href: "https://www.frontendmentor.io?ref=challenge",
+    target: "_blank",
+    className: "text-red underline"
+  }, "Frontend Mentor"), ". Coded by ", /*#__PURE__*/react.createElement("a", {
+    href: "https://www.frontendmentor.io/profile/hazel79",
+    className: "text-red underline"
+  }, "Omar M."), ".")));
 }
 
 document.body.classList.add('bg-mobile', 'md:bg-desktop');
-/*
-<footer>
-<p class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-</p>
-</footer>
- */
-
 react_dom.render( /*#__PURE__*/react.createElement(App, null), document.getElementById("root"));
 
 /***/ })
