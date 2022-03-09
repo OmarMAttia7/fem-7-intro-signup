@@ -12,16 +12,16 @@ function App() {
             <FormSection />
         </main>
 
+        <footer>
+            <p class="text-darkblue">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" className="text-red underline">Frontend Mentor</a>.
+                Coded by <a href="https://www.frontendmentor.io/profile/hazel79" className="text-red underline">Omar M.</a>.
+            </p>
+        </footer>
+
         </>
 }
 
 document.body.classList.add('bg-mobile', 'md:bg-desktop')
-/*
-<footer>
-<p class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-</p>
-</footer>
- */
+
 ReactDOM.render(<App />,document.getElementById("root"))
