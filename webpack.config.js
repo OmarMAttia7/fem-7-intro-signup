@@ -5,7 +5,8 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const postcssCustomProperties = require('postcss-custom-properties');
 const autoprefixer = require('autoprefixer');
 const tailwindCss = require('tailwindcss');
-const tailwindCssNesting = require('tailwindcss/nesting')
+const tailwindCssNesting = require('tailwindcss/nesting');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     //mode
@@ -35,13 +36,22 @@ module.exports = {
     optimization: {
         minimizer: [
             new CssMinimizerPlugin(), //This plugin minimizes CSS in production
+            new TerserPlugin({
+                test: /\.js(\?.*)?$/i,
+                terserOptions: {
+                    format: {
+                      comments: false,
+                    },
+                  },
+                  extractComments: false,
+            }),
         ],
-        minimize: true, //set to true to minimize even in development
+        minimize: true, //set to true to minimize (even in development)
 
         runtimeChunk: 'single',
 
         splitChunks: {
-            //This is used to cache production node modules
+            //This is used to cache vendors like react, etc.
             cacheGroups: {
 
                 vendor: {
